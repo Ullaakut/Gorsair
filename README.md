@@ -5,9 +5,22 @@ Gorsair is a penetration testing tool for discovering and remotely accessing Doc
 Exposing the docker API on the internet is a tremendous risk, as it can let malicious agents get information on all of the other containers, images and system, as well as potentially getting privileged access to the whole system if the image uses the `root` user.
 
 <p align="center">
-    <img src="images/blurred_results.png" width="80%"/>
-    <img src="images/Gorsair.png" width="350"/>
+    <img src="images/blurred_results.png" width="70%"/>
+    <img src="images/Gorsair.png" width="21%" style="margin-left:3%"/>
 </p>
+
+<p align="center">
+    <a href="#license">
+        <img src="https://img.shields.io/badge/license-Apache-blue.svg?style=flat" />
+    </a>
+    <a href="https://goreportcard.com/report/github.com/Ullaakut/gorsair">
+        <img src="https://goreportcard.com/badge/github.com/Ullaakut/gorsair" />
+    </a>
+    <a href="https://github.com/Ullaakut/gorsair/releases/latest">
+        <img src="https://img.shields.io/github/release/Ullaakut/gorsair.svg?style=flat" />
+    </a>
+</p>
+
 
 ## Command line options
 
