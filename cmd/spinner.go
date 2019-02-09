@@ -16,7 +16,7 @@ func updateSpinner(w *wow.Wow, text string, disabled bool) {
 
 func startSpinner(disabled bool) *wow.Wow {
 	if !disabled {
-		w := wow.New(os.Stdout, spin.Get(spin.Dots), " Loading dictionaries...")
+		w := wow.New(os.Stdout, spin.Get(spin.Dots), " Loading Gorsair...")
 		w.Start()
 		return w
 	}

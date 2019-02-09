@@ -26,16 +26,43 @@ func gorsair(cmd *cobra.Command, args []string) {
 	targets, _ := cmd.Flags().GetStringSlice("targets")
 	ports, _ := cmd.Flags().GetStringSlice("ports")
 	speed, _ := cmd.Flags().GetInt("speed")
+	proxies, _ := cmd.Flags().GetStringSlice("proxies")
+	decoys, _ := cmd.Flags().GetStringSlice("decoys")
+	spoofIP, _ := cmd.Flags().GetString("spoofIP")
+	spoofMAC, _ := cmd.Flags().GetString("spoofMAC")
+	iface, _ := cmd.Flags().GetString("interface")
 	verbose, _ := cmd.Flags().GetBool("verbose")
 
-	scanner, err := nmap.NewScanner(
+	options := []func(*nmap.Scanner){
 		nmap.WithTargets(targets...),
 		nmap.WithPorts(ports...),
 		nmap.WithTimingTemplate(nmap.Timing(speed)),
 		nmap.WithSYNScan(),
 		nmap.WithSkipHostDiscovery(),
 		nmap.WithServiceInfo(),
-	)
+	}
+
+	if len(decoys) != 0 {
+		options = append(options, nmap.WithDecoys(decoys...))
+	}
+
+	if len(proxies) != 0 {
+		options = append(options, nmap.WithProxies(proxies...))
+	}
+
+	if spoofIP != "" {
+		options = append(options, nmap.WithSpoofIPAddress(spoofIP))
+	}
+
+	if spoofMAC != "" {
+		options = append(options, nmap.WithSpoofMAC(spoofMAC))
+	}
+
+	if iface != "" {
+		options = append(options, nmap.WithInterface(iface))
+	}
+
+	scanner, err := nmap.NewScanner(options...)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
