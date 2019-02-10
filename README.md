@@ -32,7 +32,7 @@ Exposing the docker API on the internet is a tremendous risk, as it can let mali
 * **`-D`, `--decoys`**:     List of decoy IP addresses to use (see the [decoy section of the nmap documentation](https://nmap.org/book/man-bypass-firewalls-ids.html))
 * **`-e`, `--interface`**:  Network interface to use
 * **`--proxies`**:          List of HTTP/SOCKS4 proxies to use to deplay connections with
-(https://nmap.org/book/man-performance.html)) (default 4)
+([see documentation](https://nmap.org/book/man-bypass-firewalls-ids.html))
 * **`-S`, `--spoof-ip`**:   IP address to use for IP spoofing
 * **`--spoof-mac`**:        MAC address to use for MAC spoofing
 * **`-v`, `--verbose`**:    Enable verbose logging
