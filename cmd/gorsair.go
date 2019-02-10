@@ -120,4 +120,10 @@ func gorsair(cmd *cobra.Command, args []string) {
 	}
 
 	printSummary(vulnerableTargets)
+
+	if len(vulnerableTargets) > 0 {
+		if err := rootAccess(vulnerableTargets); err != nil {
+			fmt.Println(err)
+		}
+	}
 }

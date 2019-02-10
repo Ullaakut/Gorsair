@@ -13,9 +13,9 @@ type vulnerableDockerAPI struct {
 }
 
 type dockerContainer struct {
-	Image  string
-	Mounts string
-	ID     string
+	Image string
+	Ports string
+	ID    string
 }
 
 type dockerInfo struct {
