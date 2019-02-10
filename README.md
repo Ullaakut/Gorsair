@@ -27,9 +27,14 @@ Exposing the docker API on the internet is a tremendous risk, as it can let mali
 
 ### From a release
 
-Set the `GORSAIR_VERSION` to whatever release you are interested in and run the following command to install gorsair.
+Set the:
+* `GORSAIR_VERSION` to whatever release you are interested in
+* `OS` to your operating system (`linux`, `windows` or `darwin`)
+* `ARCH` to your architecture (`amd64`, `arm`, or `ppc64le`)
 
-`curl https://github.com/Ullaakut/Gorsair/releases/download/$GORSAIR_VERSION/gorsair_darwin_amd64 --output /usr/local/bin/gorsair`
+And then run the following command to install gorsair.
+
+`curl https://github.com/Ullaakut/Gorsair/releases/download/$GORSAIR_VERSION/gorsair_$OS_$ARCH --output /usr/local/bin/gorsair`
 
 ### From the sources
 
