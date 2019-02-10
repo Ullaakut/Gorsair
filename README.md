@@ -1,14 +1,8 @@
 # Gorsair
 
-Gorsair is a penetration testing tool for discovering and remotely accessing Docker APIs from vulnerable Docker containers.
-
-Exposing the docker API on the internet is a tremendous risk, as it can let malicious agents get information on all of the other containers, images and system, as well as potentially getting privileged access to the whole system if the image uses the `root` user.
-
 <p align="center">
-    <img src="images/blurred_results.png" width="70%"/>
-    <img src="images/Gorsair.png" width="21%" style="margin-left:3%"/>
+    <a href="https://asciinema.org/a/226476"><img src="images/gorsair.gif" width="700px"/></a>
 </p>
-
 <p align="center">
     <a href="#license">
         <img src="https://img.shields.io/badge/license-Apache-blue.svg?style=flat" />
@@ -21,6 +15,13 @@ Exposing the docker API on the internet is a tremendous risk, as it can let mali
     </a>
 </p>
 
+Gorsair is a penetration testing tool for discovering and remotely accessing Docker APIs from vulnerable Docker containers.
+
+Exposing the docker API on the internet is a tremendous risk, as it can let malicious agents get information on all of the other containers, images and system, as well as potentially getting privileged access to the whole system if the image uses the `root` user.
+
+<p align="center">
+    <img src="images/Gorsair.png" width="300px"/>
+</p>
 
 ## Command line options
 
