@@ -12,7 +12,7 @@ import (
 )
 
 func gatherInformation(api *vulnerableDockerAPI) error {
-	docker, err := client.NewClient(api.Endpoint, getXYDockerVersion(api.DockerVersion), nil, nil)
+	docker, err := client.NewClient(api.Endpoint, "1.39", nil, nil)
 	if err != nil {
 		return err
 	}
@@ -139,8 +139,6 @@ func rootAccess(targets []vulnerableDockerAPI) error {
 			}
 		}
 	}
-
-	return nil
 }
 
 func execCommand(docker *client.Client, containerID, command string) (string, error) {
