@@ -167,9 +167,3 @@ func execCommand(docker *client.Client, containerID, command string) (string, er
 
 	return string(r), nil
 }
-
-func getXYDockerVersion(version string) string {
-	xyz := strings.Split(version, ".")
-
-	return strings.Join(xyz[:2], ".")
-}

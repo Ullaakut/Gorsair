@@ -15,7 +15,7 @@
     </a>
 </p>
 
-Gorsair is a penetration testing tool for discovering and remotely accessing Docker APIs from vulnerable Docker containers.
+Gorsair is a penetration testing tool for discovering and remotely accessing Docker APIs from vulnerable Docker containers. Once it has access to the docker daemon, you can use Gorsair to directly execute commands on remote containers.
 
 Exposing the docker API on the internet is a tremendous risk, as it can let malicious agents get information on all of the other containers, images and system, as well as potentially getting privileged access to the whole system if the image uses the `root` user.
 
