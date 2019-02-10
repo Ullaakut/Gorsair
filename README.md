@@ -23,6 +23,20 @@ Exposing the docker API on the internet is a tremendous risk, as it can let mali
     <img src="images/Gorsair.png" width="300px"/>
 </p>
 
+## Install
+
+### From a release
+
+Set the `GORSAIR_VERSION` to whatever release you are interested in and run the following command to install gorsair.
+
+`curl https://github.com/Ullaakut/Gorsair/releases/download/$GORSAIR_VERSION/gorsair_darwin_amd64 --output /usr/local/bin/gorsair`
+
+### From the sources
+
+* Make sure that you have a go version that supports modules (versions 1.11 and above)
+* Make sure that your environment contains the `GO111MODULE` variable set to `on`
+* Run `go build -o /usr/local/bin/gorsair cmd/*.go` from the root of this repository
+
 ## Command line options
 
 * **`-t`, `--targets`**:    Set targets according to the [nmap target format](https://nmap.org/book/man-target-specification.html). Required. Example: `--targets="192.168.1.72,192.168.1.74"`
