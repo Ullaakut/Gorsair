@@ -29,7 +29,7 @@ func printSummary(targets []vulnerableDockerAPI) {
 			if len(target.Containers) > 0 {
 				fmt.Printf("\n    %s running containers:\n", green(fmt.Sprint(len(target.Containers))))
 				for _, container := range target.Containers {
-					fmt.Printf("        %s %+v\n", container.Image, container.Mounts)
+					fmt.Printf("        %s %+v\n", container.Image, container.Ports)
 				}
 			} else {
 				fmt.Println("    No running containers")
@@ -42,14 +42,6 @@ func printSummary(targets []vulnerableDockerAPI) {
 				}
 			} else {
 				fmt.Println("    No available images")
-			}
-
-			if len(target.Containers) > 0 {
-				fmt.Println("\n    To get privileged access, try running:")
-
-				for _, container := range target.Containers {
-					fmt.Printf("        docker -H %s:%d exec -it %s sh\n", target.Host, target.Port, container.ID)
-				}
 			}
 		}
 	}
