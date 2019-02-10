@@ -29,14 +29,12 @@ Exposing the docker API on the internet is a tremendous risk, as it can let mali
 * **`-p`, `--ports`**:      (Default: `2375,2376`) Set custom ports.
 * **`-s`, `--speed`**:      (Default: `4`) Set custom nmap discovery presets to improve speed or accuracy. It's recommended to lower it if you are attempting to scan an unstable and slow network, or to increase it if on a very performant and reliable network. You might also want to keep it low to keep your discovery stealthy. See [this for more info on the nmap timing templates](https://nmap.org/book/man-performance.html).
 * **`-v`, `--verbose`**:    Enable more verbose logs.
-* **`-D`, `--decoys`**:     List of decoy IP addresses to use (see the decoy section in https://nmap.org/book/man-bypass-firewalls-ids.html
+* **`-D`, `--decoys`**:     List of decoy IP addresses to use (see the [decoy section of the nmap documentation](https://nmap.org/book/man-bypass-firewalls-ids.html))
 * **`-e`, `--interface`**:  Network interface to use
-* **`-p`, `--ports`**:      List of ports to scan (default [2375,2376])
 * **`--proxies`**:          List of HTTP/SOCKS4 proxies to use to deplay connections with
-* **`-s`, `--speed`**:      Speed at which to scan the network. Lower is stealthier (see https://nmap.org/book/man-performance.html) (default 4)
+(https://nmap.org/book/man-performance.html)) (default 4)
 * **`-S`, `--spoof-ip`**:   IP address to use for IP spoofing
 * **`--spoof-mac`**:        MAC address to use for MAC spoofing
-* **`-t`, `--targets`**:    List of targets to scan in nmap format (see https://nmap.org/book/man-target-specification.html)
 * **`-v`, `--verbose`**:    Enable verbose logging
 * **`-h`, `--help`**:       Display the usage information
 
