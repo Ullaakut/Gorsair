@@ -34,7 +34,7 @@ Set the:
 
 And then run the following command to install gorsair.
 
-`curl https://github.com/Ullaakut/Gorsair/releases/download/$GORSAIR_VERSION/gorsair_$OS_$ARCH --output /usr/local/bin/gorsair`
+`curl -sS https://github.com/Ullaakut/Gorsair/releases/download/$GORSAIR_VERSION/gorsair_$OS_$ARCH --output /usr/local/bin/gorsair && chmod +x /usr/local/bin/gorsair`
 
 ### From the sources
 
