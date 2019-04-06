@@ -94,6 +94,8 @@ github.com/tsenart/deadcode v0.0.0-20160724212837-210d2dc333e9/go.mod h1:q+QjxYv
 github.com/ugorji/go/codec v0.0.0-20181204163529-d75b2dcb6bc8/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/ullaakut/disgo v0.0.0-20190310161027-e17c43d71b3d h1:tObr2ILgSQwrhpQRiVUKHtXF+0V5gYnnd/zBQGAmfuQ=
 github.com/ullaakut/disgo v0.0.0-20190310161027-e17c43d71b3d/go.mod h1:UOgLVyqihzJ7yihrHjYZikivT+AHb9NhT3r1OyPCJqg=
+github.com/ullaakut/disgo v0.3.0 h1:2zrEyNBfPRgDVDgzM/qLXZ4Yqt3Lxz7ERvZUSmqSY2M=
+github.com/ullaakut/disgo v0.3.0/go.mod h1:UOgLVyqihzJ7yihrHjYZikivT+AHb9NhT3r1OyPCJqg=
 github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee h1:Dwi6Pta3aNPhEW7XNJpfTqNj/KoD0HfGB90b+uhygHM=
 github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee/go.mod h1:4CQy4PqZA4Snk3+MS26+1oAkJ8dCY8kGH6+kF42yajw=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=

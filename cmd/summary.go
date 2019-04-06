@@ -2,46 +2,42 @@ package main
 
 import (
 	"fmt"
-	"os"
 
-	"github.com/ullaakut/disgo/logger"
-	"github.com/ullaakut/disgo/symbol"
+	"github.com/ullaakut/disgo"
+	"github.com/ullaakut/disgo/style"
 )
 
 func printSummary(targets []vulnerableDockerAPI) {
-	log, err := logger.New(os.Stdout)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Unable to create logger:", err)
-	}
+	term := disgo.NewTerminal()
 
 	if len(targets) == 0 {
-		log.Errorln(logger.Failure(symbol.Cross), "No vulnerable Docker containers were found. Please make sure that your target is on an accessible network.")
+		term.Errorln(style.Failure(style.SymbolCross), "No vulnerable Docker containers were found. Please make sure that your target is on an accessible network.")
 		return
 	}
 
 	for _, target := range targets {
-		log.Infoln(logger.Success(symbol.RightTriangle), "Vulnerable docker API found:")
-		log.Infof("    Endpoint address:\t%s\n", logger.Link(target.Host))
-		log.Infof("    Endpoint API port:\t%v\n", target.Port)
-		log.Infof("    Docker version:\t%s\n", target.DockerVersion)
+		term.Infoln(style.Success(style.SymbolRightTriangle), "Vulnerable docker API found:")
+		term.Infof("    Endpoint address:\t%s\n", style.Link(target.Host))
+		term.Infof("    Endpoint API port:\t%v\n", target.Port)
+		term.Infof("    Docker version:\t%s\n", target.DockerVersion)
 
 		if target.SocketError != nil {
-			log.Infof("    Docker API was unreachable:\t%s\n", logger.Failure(target.SocketError))
+			term.Infof("    Docker API was unreachable:\t%s\n", style.Failure(target.SocketError))
 		} else {
-			log.Infof("    Operating system:\t%s\n", target.Info.OS)
+			term.Infof("    Operating system:\t%s\n", target.Info.OS)
 			if len(target.Containers) > 0 {
-				log.Infof("\n    %s running containers:\n", logger.Success(len(target.Containers)))
+				term.Infof("\n    %s running containers:\n", style.Success(len(target.Containers)))
 				for _, container := range target.Containers {
-					log.Infof("        %s %+v\n", container.Image, container.Ports)
+					term.Infof("        %s %+v\n", container.Image, container.Ports)
 				}
 			} else {
 				fmt.Println("    No running containers")
 			}
 
 			if len(target.Images) > 0 {
-				log.Infof("\n    %s available images:\n", logger.Success(len(target.Images)))
+				term.Infof("\n    %s available images:\n", style.Success(len(target.Images)))
 				for _, image := range target.Images {
-					log.Infof("        %s\n", image)
+					term.Infof("        %s\n", image)
 				}
 			} else {
 				fmt.Println("    No available images")
@@ -56,5 +52,5 @@ func printSummary(targets []vulnerableDockerAPI) {
 		summaryStr = "\n%s Successful attack: %s devices were accessed"
 	}
 
-	log.Infof(summaryStr, logger.Success(symbol.Check), logger.Success(len(targets)))
+	term.Infof(summaryStr, style.Success(style.SymbolCheck), style.Success(len(targets)))
 }
