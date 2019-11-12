@@ -3,6 +3,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/Microsoft/go-winio v0.4.11 h1:zoIOcVf0xPN1tnMVbTtEdI+P8OofVk3NObnwOQ6nK2Q=
 github.com/Microsoft/go-winio v0.4.11/go.mod h1:VhR8bwka0BXejwEJY73c50VrPtXAaKcyvVC4A4RozmA=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
+github.com/Ullaakut/disgo v0.3.1 h1:BGGVHynji41KGuGI02ztTCnILRvyzlvmiCRl5bBpjKk=
+github.com/Ullaakut/disgo v0.3.1/go.mod h1:/CSvpnYVSKOeh2dvUvx9cXshzz2t7T1/lRO/MrFj3fI=
 github.com/Ullaakut/nmap v0.0.0-20190123211045-b27e203871ee h1:yTse8B90kleeEDj8Cd8ZauVykYfI3FiQN4vl4IHkGtA=
 github.com/Ullaakut/nmap v0.0.0-20190123211045-b27e203871ee/go.mod h1:fkC066hwfcoKwlI7DS2ARTggSVtBTZYCjVH1TzuTMaQ=
 github.com/alecthomas/gometalinter v2.0.11+incompatible h1:ENdXMllZNSVDTJUUVIzBW9CSEpntTrQa76iRsEFLX/M=
@@ -168,6 +170,8 @@ github.com/ullaakut/disgo v0.0.0-20190310161027-e17c43d71b3d h1:tObr2ILgSQwrhpQR
 github.com/ullaakut/disgo v0.0.0-20190310161027-e17c43d71b3d/go.mod h1:UOgLVyqihzJ7yihrHjYZikivT+AHb9NhT3r1OyPCJqg=
 github.com/ullaakut/disgo v0.3.0 h1:2zrEyNBfPRgDVDgzM/qLXZ4Yqt3Lxz7ERvZUSmqSY2M=
 github.com/ullaakut/disgo v0.3.0/go.mod h1:UOgLVyqihzJ7yihrHjYZikivT+AHb9NhT3r1OyPCJqg=
+github.com/ullaakut/disgo v0.3.1 h1:XfglQQLm7puB7LnmMuyd3IeMOFT5n3YT+1d36J31eJk=
+github.com/ullaakut/disgo v0.3.1/go.mod h1:UOgLVyqihzJ7yihrHjYZikivT+AHb9NhT3r1OyPCJqg=
 github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee h1:Dwi6Pta3aNPhEW7XNJpfTqNj/KoD0HfGB90b+uhygHM=
 github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee/go.mod h1:4CQy4PqZA4Snk3+MS26+1oAkJ8dCY8kGH6+kF42yajw=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=

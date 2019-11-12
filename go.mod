@@ -21,7 +21,7 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.5.0
-	github.com/ullaakut/disgo v0.3.0
+	github.com/ullaakut/disgo v0.3.1
 	github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee // indirect
 	golang.org/x/net v0.0.0-20190206173232-65e2d4e15006 // indirect
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
