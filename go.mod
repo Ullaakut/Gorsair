@@ -12,7 +12,7 @@ require (
 	github.com/gernest/wow v0.1.0
 	github.com/gogo/protobuf v1.2.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
-	github.com/manifoldco/promptui v0.6.0
+	github.com/manifoldco/promptui v0.7.0
 	github.com/mattn/go-colorable v0.1.0 // indirect
 	github.com/nicksnyder/go-i18n v1.10.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
