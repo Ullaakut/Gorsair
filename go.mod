@@ -20,7 +20,7 @@ require (
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/spf13/cobra v0.0.7
 	github.com/spf13/pflag v1.0.5
-	github.com/spf13/viper v1.6.3
+	github.com/spf13/viper v1.7.0
 	github.com/ullaakut/disgo v0.3.1
 	github.com/ullaakut/nmap v0.0.0-20190123211045-b27e203871ee // indirect
 	golang.org/x/net v0.0.0-20190206173232-65e2d4e15006 // indirect
