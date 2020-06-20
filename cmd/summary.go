@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/ullaakut/disgo"
-	"github.com/ullaakut/disgo/style"
+	"github.com/Ullaakut/disgo"
+	"github.com/Ullaakut/disgo/style"
 )
 
 func printSummary(targets []vulnerableDockerAPI) {
