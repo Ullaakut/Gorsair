@@ -12,7 +12,10 @@ import (
 )
 
 func gatherInformation(api *vulnerableDockerAPI) error {
-	docker, err := client.NewClient(api.Endpoint, "1.39", nil, nil)
+	docker, err := client.NewClientWithOpts(
+		client.WithHost(api.Endpoint),
+		client.WithVersion("1.39"),
+	)
 	if err != nil {
 		return err
 	}
@@ -105,7 +108,10 @@ func rootAccess(targets []vulnerableDockerAPI) error {
 				break
 			}
 
-			docker, err := client.NewClient(target.Endpoint, "1.39", nil, nil)
+			docker, err := client.NewClientWithOpts(
+				client.WithHost(target.Endpoint),
+				client.WithVersion("1.39"),
+				)
 			if err != nil {
 				return err
 			}
@@ -155,10 +161,10 @@ func execCommand(docker *client.Client, containerID, command string) (string, er
 	}
 
 	response, err := docker.ContainerExecAttach(context.Background(), exec.ID, types.ExecStartCheck{})
-	defer response.Close()
 	if err != nil {
 		return "", err
 	}
+	defer response.Close()
 
 	r, err := ioutil.ReadAll(response.Reader)
 	if err != nil {
