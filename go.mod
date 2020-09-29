@@ -10,7 +10,7 @@ require (
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
 	github.com/gernest/wow v0.1.1-0.20200522104827-054d00a5a868 // indirect
-	github.com/manifoldco/promptui v0.7.0
+	github.com/manifoldco/promptui v0.8.0
 	github.com/mattn/go-colorable v0.1.0 // indirect
 	github.com/nicksnyder/go-i18n v1.10.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
