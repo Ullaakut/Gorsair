@@ -7,7 +7,7 @@ require (
 	github.com/Microsoft/go-winio v0.4.11 // indirect
 	github.com/Ullaakut/disgo v0.3.1
 	github.com/Ullaakut/nmap v0.0.0-20190123211045-b27e203871ee
-	github.com/docker/distribution v2.7.1+incompatible // indirect
+	github.com/docker/distribution v2.8.0+incompatible // indirect
 	github.com/docker/docker v0.7.3-0.20190208221036-832ce62cb26d
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
