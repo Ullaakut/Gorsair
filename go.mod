@@ -6,7 +6,7 @@ require (
 	github.com/Azure/go-ansiterm v0.0.0-20210608223527-2377c96fe795 // indirect
 	github.com/Microsoft/go-winio v0.4.11 // indirect
 	github.com/Ullaakut/disgo v0.3.1
-	github.com/Ullaakut/nmap v0.0.0-20190123211045-b27e203871ee
+	github.com/Ullaakut/nmap v2.0.2+incompatible
 	github.com/docker/distribution v2.8.0+incompatible // indirect
 	github.com/docker/docker v0.7.3-0.20190208221036-832ce62cb26d
 	github.com/docker/go-connections v0.4.0 // indirect
