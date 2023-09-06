@@ -7,7 +7,7 @@ require (
 	github.com/Ullaakut/disgo v0.3.1
 	github.com/Ullaakut/nmap v2.0.2+incompatible
 	github.com/docker/distribution v2.8.2+incompatible // indirect
-	github.com/docker/docker v24.0.5+incompatible
+	github.com/docker/docker v24.0.6+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
 	github.com/gernest/wow v0.1.1-0.20200522104827-054d00a5a868
